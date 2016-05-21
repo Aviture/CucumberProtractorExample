@@ -1,0 +1,15 @@
+{
+  "name": "cucumber-protractor-example",
+  "version": "0.0.1",
+  "description": "Jumping off point for CucumberJS and Protractor projects",
+  "scripts": {
+    "install": "node node_modules/protractor/bin/webdriver-manager update"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
+    "cucumber": "^0.10.3",
+    "protractor": "^3.3.0",
+    "protractor-cucumber-framework": "^0.5.0"
+  }
+}
