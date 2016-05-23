@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "Jumping off point for CucumberJS and Protractor projects",
   "scripts": {
-    "install": "node node_modules/protractor/bin/webdriver-manager update"
+    "install": "node node_modules/protractor/bin/webdriver-manager update",
+    "start" : "protractor protractorConfig.js"
   },
   "devDependencies": {
     "chai": "^3.5.0",
