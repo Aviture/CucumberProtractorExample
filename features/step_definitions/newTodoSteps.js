@@ -8,7 +8,7 @@ var expect = chai.expect;
 var firstExampleSteps = function () {
 
     this.Given(/^I have gone to the angular todo mvc page/, function () {
-        return browser.get('http://todomvc.com/examples/angularjs/');
+        return browser.get('/examples/angularjs/');
     });
 
     this.Given(/^I have entered "([^"]*)" into the todo entry box$/, function (newTodoText) {
@@ -21,9 +21,9 @@ var firstExampleSteps = function () {
         return input.sendKeys(protractor.Key.ENTER);
     });
 
-    this.Then(/^I should see "([^"]*)" in the todo list$/, function (todoText, callback) {
+    this.Then(/^I should see "([^"]*)" in the todo list$/, function (todoText) {
         var todoLabel = element(by.cssContainingText('li label', todoText));
-        expect(todoLabel.isDisplayed()).to.eventually.equal(true).and.notify(callback);
+        return expect(todoLabel.isDisplayed()).to.eventually.equal(true);
     });
 };
 module.exports = firstExampleSteps;
