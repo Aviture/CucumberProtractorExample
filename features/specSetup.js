@@ -45,11 +45,11 @@ var specSetup = function() {
 
         var createHtmlReport = function(sourceJson) {
             var CucumberHtmlReport = require('cucumber-html-report');
-            var report = new CucumberHtmlReport({
+            return CucumberHtmlReport.create({
+                name: 'acceptanceTestsReport.html',
                 source: sourceJson, // source json
                 dest: outputDir // target directory (will create if not exists)
             });
-            report.createReport();
         };
 
         var JsonFormatter = Cucumber.Listener.JsonFormatter();
