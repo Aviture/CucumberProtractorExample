@@ -4,8 +4,19 @@ var chai = require('chai');
 var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 var expect = chai.expect;
+var Serenity = require('serenity-js').serenity;
+var Actor = require('serenity-js/lib/screenplay').Actor;
+var BrowseTheWeb = require('serenity-js/lib/screenplay-protractor').BrowseTheWeb;
+var Open = require('serenity-js/lib/screenplay-protractor').Open;
+var protractor = require('protractor');
+
+
 
 var firstExampleSteps = function () {
+
+    var stage = Serenity.callToStageFor({
+        actor: (name) => Actor.named(name).whoCan(BrowseTheWeb.using(protractor.browser))
+    });
 
     this.Given(/^I have gone to the angular todo mvc page/, function () {
         return browser.get('/examples/angularjs/');
