@@ -1,12 +1,9 @@
 'use strict';
 
 exports.config = {
-
-    seleniumServerJar:'./node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-3.3.1.jar',
-    chromeDriver: './node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_2.28',
-
+    directConnect: true,
     capabilities: {
-        'browserName': 'chrome'
+        browserName: 'chrome'
     },
 
     framework: 'custom',
